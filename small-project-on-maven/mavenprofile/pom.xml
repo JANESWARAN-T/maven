@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.janesh.product</groupId>
+    <artifactId>productparent</artifactId>
+    <version>1.0</version>
+  </parent>
+  <groupId>com.janes.maven</groupId>
+  <artifactId>mavenprofile</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>mavenprofile</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <profiles>
+  	<profile>
+  		<id>dev</id>
+  		<properties>
+  			<build.id.profile>dev</build.id.profile>
+  		</properties>
+  		<build>
+  			<resources>
+  				<resource>
+  					<directory>src/main/profiles/dev</directory>
+  				</resource>
+  			</resources>
+  		</build>
+  	</profile>
+  	
+  	<profile>
+  		<id>test</id>
+  		<properties>
+  			<build.id.profile>test</build.id.profile>
+  		</properties>
+  		<build>
+  			<resources>
+  				<resource>
+  					<directory>src/main/profiles/test</directory>
+  				</resource>
+  			</resources>
+  		</build>
+  	</profile>
+  	
+  	<profile>
+  		<id>prod</id>
+  		<properties>
+  			<build.id.profile>prod</build.id.profile>
+  		</properties>
+  		<build>
+  			<resources>
+  				<resource>
+  					<directory>src/main/profiles/pod</directory>
+  				</resource>
+  			</resources>
+  		</build>
+  	</profile>
+  	
+  	
+  </profiles>
+  
+</project>
